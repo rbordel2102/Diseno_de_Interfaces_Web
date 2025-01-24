@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3.10</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-overlay">
+            <h1>Bienvenido a Mi Página Web</h1>
+            <p>Desliza hacia abajo</p>
+        </div>
+    </header>
+
+    <section class="gallery">
+        <img src="imagen1.webp" alt="Imagen 1" class="gallery-item">
+        <img src="imagen2.webp" alt="Imagen 2" class="gallery-item">
+        <img src="imagen3.webp" alt="Imagen 3" class="gallery-item">
+    </section>
+
+    <section class="content">
+        <div class="content-item">
+            <picture>
+                <source media="(min-width:1024px)" srcset="large-imagen.webp">
+                <source media="(min-width:768px)" srcset="medium-imagen.webp">
+                <source media="(max-width:767px)" srcset="small-imagen.webp">
+                <img src="small-imagen.webp" alt="Imagenes" style="width:auto;">
+            </picture>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <a href="#" class="footer-link">
+            <span class="footer-icon"></span> Roberto Borrego Delgado - Diseño de Interfaces Web
+        </a>
+    </footer>
+</body>
+</html>
