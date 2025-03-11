@@ -1,0 +1,422 @@
+/* Importar la fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos generales */
+* {
+    margin: 0;  /* Elimina el margen por defecto de los elementos */
+    padding: 0;  /* Elimina el relleno por defecto de los elementos */
+    box-sizing: border-box;  /* Ajusta el modelo de caja para incluir padding y borde en el tamaño total del elemento */
+}
+
+html,
+body {
+    height: 100%;  /* Asegura que tanto html como body ocupen todo el alto de la pantalla */
+    font-family: 'Poppins', sans-serif;    /* Define una fuente genérica */
+    line-height: 1.6;  /* Espaciado entre líneas para mejorar la legibilidad */
+    background-color: #f7f7f7;  /* Color de fondo claro para la página */
+    color: #333;  /* Color de texto oscuro para buena legibilidad */
+    overflow-x: hidden;  /* Evita el desplazamiento horizontal */
+    transition: all 1s;  /* Transición suave para cambios globales, como el cambio de tema */
+}
+
+/* Encabezado */
+header {
+    background-color: #3a3a3a;  /* Fondo oscuro para el encabezado */
+    color: #fff;  /* Texto blanco para destacar sobre el fondo oscuro */
+    padding: 10px 20px;  /* Espaciado vertical del encabezado */
+}
+
+/* Contenedor para el contenido del header */
+.container.header-container {
+    display: flex;  /* Usa flexbox para alinear los elementos */
+    justify-content: space-between;  /* Coloca los elementos a los extremos del contenedor */
+    align-items: center;  /* Centra los elementos verticalmente */
+    width: 100%;  /* Asegura que el contenedor ocupe todo el ancho */
+    max-width: 1200px;  /* Límite de ancho máximo para no estirarse demasiado en pantallas grandes */
+    margin: 0 auto;  /* Centra el contenedor en la página */
+    padding: 0 20px;  /* Añade espacio a los lados */
+}
+
+/* Título Filamentopía alineado a la izquierda */
+header h1 {
+    font-size: 2.5rem;  /* Tamaño de fuente grande para el título */
+    margin-left: 0;  /* Elimina el margen izquierdo extra */
+    text-align: left;  /* Alinea el texto a la izquierda */
+}
+
+.subtitulo {
+    font-size: 4rem;
+    margin-left: 0;
+    text-align: center;
+    color: #fff;
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;  /* Elimina los puntos de la lista */
+    display: flex;  /* Usa flexbox para organizar los elementos horizontalmente */
+    padding: 0;  /* Elimina el padding por defecto */
+    margin: 0;  /* Elimina el margen por defecto */
+}
+
+nav ul li {
+    margin: 0 15px;  /* Añade margen entre los elementos de la lista */
+}
+
+nav ul li a {
+    text-decoration: none;  /* Elimina el subrayado de los enlaces */
+    color: white;  /* Color blanco para los enlaces */
+    font-size: 1.2rem;  /* Tamaño de fuente para los enlaces */
+    transition: color 0.3s;  /* Transición suave para el cambio de color */
+}
+
+nav ul li a:hover {
+    color: #f4c542;  /* Cambia el color a amarillo dorado cuando se pasa el cursor */
+}
+
+/* Contenedor para el botón lunar */
+#theme-switcher {
+    display: flex;  /* Usa flexbox para centrar el botón */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo del botón lunar (luna) */
+#moon {
+    width: 100px;  /* Tamaño del botón luna */
+    height: 100px;
+    background: #eef;  /* Color de fondo de la luna en modo claro */
+    border-radius: 50%;  /* Forma circular */
+    position: relative;  /* Posición relativa para poder usar elementos dentro */
+    transition: all 1s;  /* Transición suave */
+    cursor: pointer;  /* Cambia el cursor a mano para indicar que es interactivo */
+}
+
+#moon .spots {
+    border-radius: 50%;  /* Forma circular para los cráteres de la luna */
+    background: #ccd;  /* Color de los cráteres */
+    position: absolute;  /* Posición absoluta dentro de la luna */
+    transition: all 1s;  /* Transición suave */
+}
+
+/* Posición de los cráteres */
+#moonspot1 {
+    width: 15px;
+    height: 15px;
+    top: 40%;
+    left: 5%;
+}
+
+#moonspot2 {
+    width: 6px;
+    height: 6px;
+    top: 70%;
+    left: 25%;
+}
+
+
+/* Cambio de tema (Modo oscuro) */
+body.dark-theme {
+    background: #001;  /* Color de fondo oscuro para el modo oscuro */
+    color: #e0e0e0; /* Texto claro */
+}
+
+body.dark-theme p {
+    color: #e0e0e0; /* Color claro para los párrafos en modo oscuro */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente oscuro */
+    padding: 10px; /* Espaciado interno para mejorar visibilidad */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+
+body.dark-theme #moon {
+    background: #f6d602;  /* Cambia el color de la luna a amarillo en el modo oscuro */
+    border: 5px solid #f5eb71;  /* Añade un borde amarillo a la luna */
+}
+
+body.dark-theme #moon .spots {
+    width: 0;  /* Elimina los cráteres de la luna en el modo oscuro */
+    height: 0;
+    background: #f6d602;  /* Cambia el color de los cráteres */
+}
+
+/* Secciones */
+main {
+    padding: 20px;  /* Añade espacio en los márgenes del main */
+    margin-top: 20px;  /* Espacio superior entre el encabezado y el contenido */
+}
+
+section {
+    background-color: #ffffff6e !important;  /* Fondo blanco con opacidad */
+    padding: 20px;  /* Espaciado interno */
+    border-radius: 8px;  /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave para las secciones */
+    margin-bottom: 20px;  /* Espacio entre las secciones */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;  /* Transición suave para efectos hover */
+}
+
+section:hover {
+    transform: scale(1.005);  /* Aumenta ligeramente el tamaño al pasar el ratón */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);  /* Aumenta la sombra para destacar la sección */
+    z-index: 2;  /* Asegura que la sección esté por encima de otras */
+    background-color: #f4f4f4;  /* Cambia el color de fondo al hacer hover */
+}
+
+h2 {
+    font-size: 6rem;  /* Título grande */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;  /* Grosor de la fuente */
+}
+.h21 {
+    font-size: 6rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Reducimos la altura al 60% del viewport */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Estilo para el contenido del hero */
+.hero-content {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    max-width: 80%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor legibilidad */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Botón de Play/Pause */
+.video-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 3;
+    color: white;
+    font-size: 20px;
+}
+
+.video-controls:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: #3a3a3a;
+    color: white;
+    /* Usa flexbox para centrar el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Estilo para los enlaces en el pie de página */
+footer a {
+    color: white; /* Color blanco para los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    margin: 0 10px; /* Espacio entre los enlaces */
+}
+
+/* Efecto hover sobre los enlaces del pie de página */
+footer a:hover {
+    color: #f4c542; /* Cambia el color a amarillo cuando se pasa el ratón */
+}
+
+footer nav ul {
+    display: flex; /* Alinear los elementos en una fila */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    padding: 0; /* Eliminar el padding por defecto */
+    margin: 0; /* Eliminar el margen por defecto */
+    list-style: none; /* Eliminar los puntos de la lista */
+}
+
+footer nav ul li {
+    margin: 0 10px; /* Espacio entre los elementos de la lista */
+}
+
+/* Estilos generales para la sección "about-content" */
+#about-us2 .about-content {
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 20px; /* Espacio entre imágenes */
+    margin-top: 20px; /* Espacio superior para separarlo del contenido anterior */
+}
+
+#about-us2 .img-container {
+    flex: 1; /* Ajusta el tamaño de los contenedores para que ocupen el mismo espacio */
+    max-width: 30%; /* Limita el tamaño máximo de cada imagen en pantallas grandes */
+    text-align: center; /* Centra las imágenes dentro de su contenedor */
+}
+
+#about-us2 .img-container img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra a las imágenes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efectos suaves al pasar el ratón */
+}
+
+#about-us2 .img-container img:hover {
+    transform: scale(1.05); /* Amplía ligeramente la imagen al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al hacer hover */
+}
+
+@keyframes colorChange {
+    0% {
+        color: rgb(255, 215, 0); /* Gold */
+    }
+    25% {
+        color: rgb(255, 223, 0); /* GoldenRod */
+    }
+    50% {
+        color: rgb(255, 140, 0); /* DarkOrange */
+    }
+    75% {
+        color: rgb(255, 69, 0); /* OrangeRed */
+    }
+    100% {
+        color: rgb(255, 215, 0); /* Gold */
+    }
+}
+
+.title-animation {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.title-animation:hover {
+    animation: colorChange 2s infinite; /* Aplica la animación de cambio de color */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .header-container {
+        /* Cambia la dirección del layout a columna en pantallas pequeñas */
+        flex-direction: column;
+        /* Alinea los elementos al inicio en lugar de al centro */
+        align-items: flex-start;
+    }
+
+    nav ul {
+        /* Coloca los enlaces de navegación en columna */
+        flex-direction: column;
+        /* Reduce el espacio entre los enlaces */
+        gap: 10px;
+    }
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.video-container video {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container video:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.video-title {
+    margin-top: 150px;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.video-description {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Aplicar la tipografía */
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    line-height: 1.6;
+    color: #333;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.p1 {
+    animation: fadeInUp 5s ease-out forwards;
+    margin-right: 100px;
+}
+
+.p2 {
+    animation: fadeInUp 5s ease-out forwards;
+    margin-top: 50px;
+}
+
+.p5 {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    color: white; /* Color de texto blanco */
+    margin: 5px 0; /* Margen superior e inferior */
+}
+
+/* Animación de desvanecimiento y desplazamiento */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar un retraso a los párrafos para que aparezcan secuencialmente */
+p:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+p:nth-child(2) {
+    animation-delay: 0.4s;
+}

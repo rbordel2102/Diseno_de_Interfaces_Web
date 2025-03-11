@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filamentopía - Contacto</title>
+    <link rel="stylesheet" href="css/styleContacto.css">
+    <link id="themeLink" rel="stylesheet" href="css/theme-light.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Título de la tienda -->
+            <h1 class="title-animation">Filamentopía</h1>
+            
+            <!-- Menú de navegación -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Añadir audio para el sonido del gallo -->
+            <audio id="audioGallo" src="multimedia/audio/gallo.wav"></audio>
+            <audio id="audioBuho" src="multimedia/audio/owl.ogg"></audio>
+            <!-- Botón para cambiar entre tema claro y oscuro -->
+            <button id="moon" aria-label="Cambiar tema de la página">
+                <div id="moonspot1" class="spots"></div>
+                <div id="moonspot2" class="spots"></div>
+            </button>
+        </div>
+    </header>
+
+    <main class="container mt-5">
+        <section id="contacto" data-aos="fade-up">
+            <h2 class="text-center">Contacto</h2>
+            <details>
+                <summary>Más información</summary>
+                <p>Estamos disponibles de lunes a viernes de 9:00 a 18:00.</p>
+            </details>
+            
+            <div class="formulario-contacto">
+                <form id="formulario" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" required aria-label="Nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="email" id="correo" name="correo" class="form-control" required aria-describedby="emailHelp">
+                        <small id="emailHelp">Introduce un correo válido.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha de contacto:</label>
+                        <input type="date" id="fecha" name="fecha" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color preferido:</label>
+                        <input type="color" id="color" name="color" class="form-control" aria-label="Selecciona un color preferido">
+                        </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" class="form-control" required aria-label="Escribe tu mensaje"></textarea>
+                    </div>
+                    <button id="botonEnviar" type="submit" class="btn btn-success" aria-live="polite">Enviar</button>
+                </form>
+            </div>
+    
+            <dialog id="dialogo" role="alert" tabindex="0">
+                <p>¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.</p>
+                <button onclick="cerrarDialogo()">Cerrar</button>
+            </dialog>
+        </section>
+    
+        <canvas id="grafico" width="400" height="200"></canvas>
+    
+        <iframe title="Ubicación en Google Maps" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d798.0804173708689!2d-5.651777844436733!3d36.858718620958896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zQ2FsbGUgQmxhcyBJbmZhbnRlLCBCbG9xdWUgNCwgUG9ydGFsIDMsIDLCuiBCLyBWaWxsYW1hcnTDrW4gLSAxMTY1MC8gQ8OhZGl6LyBBbmRhbHVjw61hLyBFc3Bhw7Fh!5e0!3m2!1ses!2ses!4v1729847591747!5m2!1ses!2ses" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </main>
+
+    <!-- Footer (Pie de página) -->
+    <footer>
+        <div class="container footer-container">
+            <p class="p5">&copy; 2024 Filamentopía. Todos los derechos reservados.</p>
+            <nav aria-label="Menú del pie de página">
+                <ul>
+                    <li class="p5"><a href="#">Política de privacidad</a></li>
+                    <li class="p5"><a href="#">Términos de servicio</a></li>
+                </ul>
+            </nav>
+            <div class="accessibility-certificate">
+                <p class="p5"><img src="multimedia/image/accees.png" alt="Icono de accesibilidad" width="20" height="20"> Sitio certificado en accesibilidad WCAG 2.1 Nivel AA</p>
+            <p class="p5">Este sitio web está licenciado bajo <a
+                    href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+            <p class="p5">Imágenes y recursos cortesía de <a href="https://www.pexels.com/" target="_blank">Pexels</a> y
+                <a href="https://www.pixabay.com/" target="_blank">Pixabay</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('dialogo').showModal();
+        });
+        function cerrarDialogo() {
+            document.getElementById('dialogo').close();
+        }
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init();
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-theme");
+            }
+        });
+        
+        // Evento que cambia el tema al hacer clic en el botón del "moon"
+        document.getElementById('moon').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        
+            // Guardar en localStorage el estado actual del tema
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem("theme", "dark");
+                document.getElementById('audioBuho').play();
+            } else {
+                localStorage.setItem("theme", "light");
+                document.getElementById('audioGallo').play();
+            }
+        });
+
+        const ctx = document.getElementById('grafico').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
+                datasets: [{
+                    label: 'Contactos recibidos',
+                    data: [12, 19, 3, 5, 2],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+            }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</body>
+</html>

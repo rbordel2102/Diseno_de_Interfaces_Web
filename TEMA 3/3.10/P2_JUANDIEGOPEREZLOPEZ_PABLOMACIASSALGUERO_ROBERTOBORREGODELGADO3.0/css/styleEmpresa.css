@@ -1,0 +1,288 @@
+/* Importar la fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos generales */
+* {
+    margin: 0; /* Elimina el margen por defecto de los elementos */
+    padding: 0; /* Elimina el padding por defecto de los elementos */
+    box-sizing: border-box; /* Hace que el padding y el border se incluyan en las dimensiones de los elementos */
+}
+
+html, body {
+    height: 100%; /* Establece que tanto el html como el body ocupen toda la altura de la ventana */
+    font-family: 'Poppins', sans-serif; /* Define la fuente principal */
+    line-height: 1.6; /* Establece la altura de línea para facilitar la lectura */
+    background-color: #f7f7f7; /* Color de fondo del body */
+    color: #333; /* Color de texto por defecto */
+    overflow-x: hidden; /* Elimina el desbordamiento horizontal */
+    transition: all 0.5s; /* Transición para aplicar cambios suaves en todo el documento */
+}
+
+/* Contenedor del encabezado */
+.header-container {
+    display: flex; /* Utiliza Flexbox para organizar el contenido */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    padding: 10px 20px; /* Añade espacio alrededor del contenido */
+    background-color: #3a3a3a; /* Fondo oscuro para el encabezado */
+    color: white; /* Color de texto blanco */
+}
+
+/* Botón lunar dentro del encabezado para el cambio de tema */
+#moon {
+    /* Tamaño del botón */
+    width: 50px;
+    height: 50px;
+    /* Fondo claro para el botón lunar */
+    background: #eef;
+    /* Lo hace circular */
+    border-radius: 50%;
+    /* Posicionamiento relativo para los elementos dentro */
+    position: relative;
+    /* Transiciones suaves para el cambio de estado */
+    transition: all 0.5s;
+    /* Cambia el cursor a mano cuando se pasa sobre el botón */
+    cursor: pointer;
+    /* Usa flexbox para centrar los elementos dentro del botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Elementos dentro del botón lunar (simulan manchas de la luna) */
+  #moon .spots {
+    /* Hace que las manchas sean circulares */
+    border-radius: 50%;
+    /* Fondo de color gris claro */
+    background: #ccd;
+    /* Posicionamiento absoluto para colocar las manchas */
+    position: absolute;
+    /* Transiciones suaves para el cambio de las manchas */
+    transition: all 0.5s;
+  }
+  
+  /* Posiciona la primera mancha de la luna */
+  #moonspot1 {
+    width: 10px;
+    height: 10px;
+    top: 30%;
+    left: 30%;
+  }
+  
+  /* Posiciona la segunda mancha de la luna */
+  #moonspot2 {
+    width: 5px;
+    height: 5px;
+    top: 60%;
+    left: 50%;
+  }
+  
+  /* Cambio de tema (Modo oscuro) */
+  body.dark-theme {
+    /* Fondo oscuro para el modo oscuro */
+    background-color: #001;
+    /* Color de texto claro */
+    color: #eee;
+  }
+  
+  /* Cambia el color de fondo del botón lunar en el modo oscuro */
+  body.dark-theme #moon {
+    background-color: #f6d602;
+  }
+  
+  /* Cambia el color de las manchas en el botón lunar en el modo oscuro */
+  body.dark-theme #moon .spots {
+    background-color: #f6d602;
+  }
+
+/* Estilo del título principal */
+header h1 {
+    font-size: 2rem; /* Tamaño de fuente para el título */
+}
+
+/* Estilo para la lista de navegación */
+nav ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex; /* Utiliza Flexbox para distribuir los elementos de la lista */
+    gap: 20px; /* Espacio entre los elementos de la lista */
+}
+
+/* Estilo para los enlaces de la navegación */
+nav ul li a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: white; /* Color de los enlaces */
+    font-size: 1.2rem; /* Tamaño de fuente para los enlaces */
+    transition: color 0.3s; /* Transición suave para el color de los enlaces */
+}
+
+/* Estilo para los enlaces al pasar el ratón sobre ellos */
+nav ul li a:hover {
+    color: #f4c542; /* Cambia el color a amarillo cuando se pasa el ratón */
+}
+
+/* Estilo para el contenedor de productos */
+.productos-container {
+    display: grid; /* Utiliza un diseño de cuadrícula para los productos */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Configura las columnas para adaptarse al tamaño de la pantalla */
+    gap: 20px; /* Espacio entre los productos */
+    padding: 20px; /* Espacio alrededor del contenedor */
+}
+
+/* Estilo para cada producto */
+.producto {
+    background-color: #3a3a3a; /* Fondo oscuro para los productos */
+    border-radius: 8px; /* Bordes redondeados para los productos */
+    text-align: center; /* Centra el contenido dentro del producto */
+    padding: 20px; /* Añade espacio dentro de cada producto */
+    color: white; /* Color de texto blanco */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para transformaciones y sombras */
+    position: relative; /* Posiciona el producto relativo a su contenedor */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+.producto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.producto:hover::before {
+    left: 100%;
+}
+
+.producto:hover {
+    transform: translateY(-10px); /* Desplaza el producto hacia arriba al pasar el ratón */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Añade sombra al hacer hover */
+}
+
+/* Estilo para las imágenes de los productos */
+.producto img {
+    width: 100%; /* Hace que las imágenes llenen el contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    /* Eliminamos la transición y la transformación */
+}
+
+/* Estilo para el área de pedido */
+#pedido {
+    margin: 20px; /* Margen alrededor del área de pedido */
+    background-color: #3a3a3a; /* Fondo oscuro para el área de pedido */
+    padding: 20px; /* Espacio dentro del área de pedido */
+    border-radius: 8px; /* Bordes redondeados para el área de pedido */
+    color: white; /* Color de texto blanco */
+}
+
+/* Estilo para los campos de entrada dentro del formulario de pedido */
+#pedido form input, 
+#pedido form select, 
+#pedido form textarea, 
+#pedido form button {
+    width: 100%; /* Hace que los campos de formulario ocupen todo el ancho */
+    padding: 10px; /* Añade espacio dentro de los campos */
+    margin-top: 5px; /* Añade espacio encima de los campos */
+    border-radius: 5px; /* Bordes redondeados para los campos */
+    border: none; /* Elimina el borde predeterminado */
+}
+
+/* Estilo para el botón de enviar del formulario */
+#pedido form button {
+    background-color: #f4c542; /* Color de fondo amarillo para el botón */
+    color: #333; /* Color de texto oscuro */
+    cursor: pointer; /* Cambia el cursor a mano cuando el ratón pasa por encima */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añadimos una transición */
+}
+
+#pedido form button:hover {
+    background-color: #f4c5426c; /* Color de fondo oscuro para el botón */
+    color: #333; /* Color de texto amarillo */
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: #3a3a3a;
+    color: white;
+    /* Usa flexbox para centrar el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Estilo para los enlaces en el pie de página */
+footer a {
+    color: white; /* Color blanco para los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    margin: 0 10px; /* Espacio entre los enlaces */
+}
+
+/* Efecto hover sobre los enlaces del pie de página */
+footer a:hover {
+    color: #f4c542; /* Cambia el color a amarillo cuando se pasa el ratón */
+}
+
+footer nav ul {
+    display: flex; /* Alinear los elementos en una fila */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    padding: 0; /* Eliminar el padding por defecto */
+    margin: 0; /* Eliminar el margen por defecto */
+    list-style: none; /* Eliminar los puntos de la lista */
+}
+
+footer nav ul li {
+    margin: 0 10px; /* Espacio entre los elementos de la lista */
+}
+.p5 {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    color: white; /* Color de texto blanco */
+    margin: 5px 0; /* Margen superior e inferior */
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        /* Cambia la dirección del layout a columna en pantallas pequeñas */
+        flex-direction: column;
+        /* Alinea los elementos al inicio en lugar de al centro */
+        align-items: flex-start;
+    }
+
+    nav ul {
+        /* Coloca los enlaces de navegación en columna */
+        flex-direction: column;
+        /* Reduce el espacio entre los enlaces */
+        gap: 10px;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: rgb(255, 215, 0); /* Gold */
+    }
+    25% {
+        color: rgb(255, 223, 0); /* GoldenRod */
+    }
+    50% {
+        color: rgb(255, 140, 0); /* DarkOrange */
+    }
+    75% {
+        color: rgb(255, 69, 0); /* OrangeRed */
+    }
+    100% {
+        color: rgb(255, 215, 0); /* Gold */
+    }
+}
+
+.title-animation {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.title-animation:hover {
+    animation: colorChange 2s infinite; /* Aplica la animación de cambio de color */
+}
+

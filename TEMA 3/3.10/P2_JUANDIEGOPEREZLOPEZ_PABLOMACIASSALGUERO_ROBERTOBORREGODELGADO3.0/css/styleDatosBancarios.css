@@ -1,0 +1,162 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+  }
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  #info-pedido, #pago {
+    flex: 1;
+    padding: 30px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #3a3a3a;
+    color: white;
+  }
+  #pago form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  #pago label {
+    font-weight: bold;
+  }
+  #pago input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+  }
+  #pago button {
+    background-color: #ff9800;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  #pago button:hover {
+    background-color: #e68900;
+  }
+  
+  /* Botón lunar dentro del encabezado para el cambio de tema */
+#moon {
+  /* Tamaño del botón */
+  width: 50px;
+  height: 50px;
+  /* Fondo claro para el botón lunar */
+  background: #eef;
+  /* Lo hace circular */
+  border-radius: 50%;
+  /* Posicionamiento relativo para los elementos dentro */
+  position: relative;
+  /* Transiciones suaves para el cambio de estado */
+  transition: all 0.5s;
+  /* Cambia el cursor a mano cuando se pasa sobre el botón */
+  cursor: pointer;
+  /* Usa flexbox para centrar los elementos dentro del botón */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Elementos dentro del botón lunar (simulan manchas de la luna) */
+#moon .spots {
+  /* Hace que las manchas sean circulares */
+  border-radius: 50%;
+  /* Fondo de color gris claro */
+  background: #ccd;
+  /* Posicionamiento absoluto para colocar las manchas */
+  position: absolute;
+  /* Transiciones suaves para el cambio de las manchas */
+  transition: all 0.5s;
+}
+
+/* Posiciona la primera mancha de la luna */
+#moonspot1 {
+  width: 10px;
+  height: 10px;
+  top: 30%;
+  left: 30%;
+}
+
+/* Posiciona la segunda mancha de la luna */
+#moonspot2 {
+  width: 5px;
+  height: 5px;
+  top: 60%;
+  left: 50%;
+}
+
+/* Cambio de tema (Modo oscuro) */
+body.dark-theme {
+  /* Fondo oscuro para el modo oscuro */
+  background-color: #001;
+  /* Color de texto claro */
+  color: #eee;
+}
+
+/* Cambia el color de fondo del botón lunar en el modo oscuro */
+body.dark-theme #moon {
+  background-color: #f6d602;
+}
+
+/* Cambia el color de las manchas en el botón lunar en el modo oscuro */
+body.dark-theme #moon .spots {
+  background-color: #f6d602;
+}
+/* Estilo para el pie de página */
+footer {
+  background-color: #3a3a3a;
+  color: white;
+  /* Usa flexbox para centrar el contenido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Estilo para los enlaces en el pie de página */
+footer a {
+  color: white; /* Color blanco para los enlaces */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  margin: 0 10px; /* Espacio entre los enlaces */
+}
+
+/* Efecto hover sobre los enlaces del pie de página */
+footer a:hover {
+  color: #f4c542; /* Cambia el color a amarillo cuando se pasa el ratón */
+}
+
+footer nav ul {
+  display: flex; /* Alinear los elementos en una fila */
+  justify-content: center; /* Centrar los elementos horizontalmente */
+  padding: 0; /* Eliminar el padding por defecto */
+  margin: 0; /* Eliminar el margen por defecto */
+  list-style: none; /* Eliminar los puntos de la lista */
+}
+
+footer nav ul li {
+  margin: 0 10px; /* Espacio entre los elementos de la lista */
+}
+.p5 {
+  font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  color: white; /* Color de texto blanco */
+  margin: 5px 0; /* Margen superior e inferior */
+}

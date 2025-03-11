@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos Bancarios - Filamentopía</title>
+  <link rel="stylesheet" href="css/styleEmpresa.css">
+  <link rel="stylesheet" href="css/styleDatosBancarios.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="header-container">
+      <h1 class="title-animation">Filamentopia</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html">Tienda</a></li>
+          <li><a href="empresa.html">Empresa</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <!-- Añadir audio para el sonido del gallo -->
+      <audio id="audioGallo" src="multimedia/audio/gallo.wav"></audio>
+      <audio id="audioBuho" src="multimedia/audio/owl.ogg"></audio>
+      <!-- Botón para cambiar entre tema claro y oscuro -->
+      <button id="moon" aria-label="Cambiar tema de la página">
+          <div id="moonspot1" class="spots"></div>
+          <div id="moonspot2" class="spots"></div>
+      </button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <section id="info-pedido">
+      <h2>Información del Pedido</h2>
+      <p><strong>Empresa:</strong> <span id="empresa"></span></p>
+      <p><strong>Contacto:</strong> <span id="contacto"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Teléfono:</strong> <span id="telefono"></span></p>
+      <p><strong>Producto:</strong> <span id="producto"></span></p>
+      <p><strong>Cantidad:</strong> <span id="cantidad"></span></p>
+    </section>
+    
+    <section id="pago">
+      <h2>Introduce tus datos bancarios para realizar el pago</h2>
+      <form action="confirmacion.html" method="post" id="paymentForm">
+        <label for="titular">Nombre del Titular:</label>
+        <input type="text" id="titular" name="titular" required>
+        
+        <label for="tarjeta">Número de Tarjeta de Crédito:</label>
+        <input type="text" id="tarjeta" name="tarjeta" required pattern="\d{16}" title="Debe contener 16 dígitos">
+        
+        <label for="expiracion">Fecha de Expiración:</label>
+        <input type="month" id="expiracion" name="expiracion" required>
+        
+        <label for="cvv">Código de Seguridad (CVV):</label>
+        <input type="text" id="cvv" name="cvv" required pattern="\d{3,4}" title="3 o 4 dígitos">
+        
+        <button type="submit">Realizar Pago</button>
+      </form>
+    </section>
+  </main>
+
+  <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmModalLabel">Compra realizada</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¡Gracias por tu compra! Tu pedido ha sido procesado con éxito.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (Pie de página) -->
+  <footer>
+    <div class="container footer-container">
+        <p class="p5">&copy; 2024 Filamentopía. Todos los derechos reservados.</p>
+        <nav aria-label="Menú del pie de página">
+            <ul>
+                <li class="p5"><a href="#">Política de privacidad</a></li>
+                <li class="p5"><a href="#">Términos de servicio</a></li>
+            </ul>
+        </nav>
+        <div class="accessibility-certificate">
+            <p class="p5"><img src="multimedia/image/accees.png" alt="Icono de accesibilidad" width="20" height="20"> Sitio certificado en accesibilidad WCAG 2.1 Nivel AA</p>
+        <p class="p5">Este sitio web está licenciado bajo <a
+                href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+        <p class="p5">Imágenes y recursos cortesía de <a href="https://www.pexels.com/" target="_blank">Pexels</a> y
+            <a href="https://www.pixabay.com/" target="_blank">Pixabay</a>
+        </p>
+    </div>
+</footer>
+
+  <!-- Script para recibir datos GET y cambio de tema -->
+  <script>
+    // Verificar si hay un modo guardado en localStorage
+    document.addEventListener("DOMContentLoaded", function () {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-theme");
+      }
+      // Evento que cambia el tema al hacer clic en el botón del "moon"
+      document.getElementById('moon').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        
+            // Guardar en localStorage el estado actual del tema
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem("theme", "dark");
+                document.getElementById('audioBuho').play();
+            } else {
+                localStorage.setItem("theme", "light");
+                document.getElementById('audioGallo').play();
+            }
+        });
+      
+      const urlParams = new URLSearchParams(window.location.search);
+      document.getElementById('empresa').textContent = urlParams.get('empresa') || 'No proporcionado';
+      document.getElementById('contacto').textContent = urlParams.get('contacto') || 'No proporcionado';
+      document.getElementById('email').textContent = urlParams.get('email') || 'No proporcionado';
+      document.getElementById('telefono').textContent = urlParams.get('telefono') || 'No proporcionado';
+      document.getElementById('producto').textContent = urlParams.get('producto') || 'No proporcionado';
+      document.getElementById('cantidad').textContent = urlParams.get('cantidad') || 'No proporcionado';
+    });
+    
+    $("#paymentForm").submit(function(event) {
+      event.preventDefault(); // Evita el envío del formulario si no es válido
+      
+      if (this.checkValidity()) {
+          const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+          confirmModal.show();
+          
+          // Agregamos un evento al botón "Aceptar" del modal para redirigir a index.html
+          document.querySelector("#confirmModal .btn-primary").addEventListener("click", function () {
+              window.location.href = "index.html"; // Redirige a la página de inicio
+          });
+        
+          // Opcional: Limpiar el formulario después de un pequeño retraso
+          setTimeout(() => this.reset(), 1000);
+      } else {
+          this.reportValidity(); // Muestra los errores si el formulario no es válido
+      }
+    });
+
+
+
+  </script>
+</body>
+</html>

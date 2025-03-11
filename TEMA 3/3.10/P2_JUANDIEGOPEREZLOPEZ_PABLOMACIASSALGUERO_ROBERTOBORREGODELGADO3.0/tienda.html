@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Definición del conjunto de caracteres del documento -->
+    <meta charset="UTF-8">
+    <!-- Asegura que el contenido sea adecuado para diferentes dispositivos (móviles, etc.) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Define la compatibilidad con navegadores antiguos como Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Filamentopía - Productos</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+
+    <!-- Vinculación con el archivo de estilos CSS para la página -->
+    <link rel="stylesheet" href="css/styleTienda.css">
+    
+    <!-- Fuentes de Google Fonts para el texto de la página -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Sección de encabezado -->
+    <header>
+        <div class="header-container">
+            <!-- Título principal de la página -->
+            <h1 class="title-animation">Filamentopía</h1>
+
+            <!-- Barra de navegación del sitio -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Añadir audio para el sonido del gallo -->
+            <audio id="audioGallo" src="multimedia/audio/gallo.wav"></audio>
+            <audio id="audioBuho" src="multimedia/audio/owl.ogg"></audio>
+            <!-- Botón para cambiar entre el modo claro y oscuro (tema) -->
+            <button id="moon" aria-label="Cambiar tema de la página">
+                <div id="moonspot1" class="spots"></div>
+                <div id="moonspot2" class="spots"></div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección que contiene los productos -->
+        <section class="productos-container">
+            <!-- Cada producto se muestra en un contenedor independiente -->
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71rlElfkeUL._AC_UF894,1000_QL80_.jpg" alt="Producto 1">
+                <h3>Filamento InovaPlast 1</h3>
+                <p class="price">$20.00</p>
+                <!-- Botón para añadir el producto al carrito -->
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71ZcMSZyRLL._AC_UF1000,1000_QL80_.jpg" alt="Producto 2">
+                <h3>Filamento InovaPlast 2</h3>
+                <p class="price">$30.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71PjDnB58bL._AC_UF894,1000_QL80_.jpg" alt="Producto 3">
+                <h3>Filamento InovaPlast 3</h3>
+                <p class="price">$15.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71uVglvsUCL._AC_UF1000,1000_QL80_.jpg" alt="Producto 4">
+                <h3>Filamento InovaPlast 4</h3>
+                <p class="price">$15.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71C8meHflML._AC_UF1000,1000_QL80_.jpg" alt="Producto 5">
+                <h3>Filamento InovaPlast 5</h3>
+                <p class="price">$15.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/712mO91Qq-L.jpg" alt="Producto 6">
+                <h3>Filamento InovaPlast 6</h3>
+                <p class="price">$15.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/711uLgkStdL.jpg" alt="Producto 7">
+                <h3>Filamento InovaPlast 7</h3>
+                <p class="price">$15.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71dBjOtr1hL.jpg" alt="Producto 8">
+                <h3>Filamento InovaPlast 8</h3>
+                <p class="price">$15.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71NKVpG1VCL.jpg" alt="Producto 9">
+                <h3>Filamento InovaPlast 9</h3>
+                <p class="price">$15.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71JL-Ll9E1L.jpg" alt="Producto 10">
+                <h3>Filamento InovaPlast 10</h3>
+                <p class="price">$15.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+
+            
+
+        </section>
+    </main>
+
+    
+    <!-- Footer (Pie de página) -->
+    <footer>
+        <div class="container footer-container">
+            <p class="p5">&copy; 2024 Filamentopía. Todos los derechos reservados.</p>
+            <nav aria-label="Menú del pie de página">
+                <ul>
+                    <li class="p5"><a href="#">Política de privacidad</a></li>
+                    <li class="p5"><a href="#">Términos de servicio</a></li>
+                </ul>
+            </nav>
+            <div class="accessibility-certificate">
+                <p class="p5"><img src="multimedia/image/accees.png" alt="Icono de accesibilidad" width="20" height="20"> Sitio certificado en accesibilidad WCAG 2.1 Nivel AA</p>
+            <p class="p5">Este sitio web está licenciado bajo <a
+                    href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+            <p class="p5">Imágenes y recursos cortesía de <a href="https://www.pexels.com/" target="_blank">Pexels</a> y
+                <a href="https://www.pixabay.com/" target="_blank">Pixabay</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Añade esto dentro de tu body, antes del cierre de la etiqueta body -->
+    <audio id="audio" src="multimedia/audio/orb.mp3"></audio>
+
+    <!-- Script para cambiar el tema entre claro y oscuro -->
+    <script>
+        // Verificar si hay un modo guardado en localStorage
+        document.addEventListener("DOMContentLoaded", function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-theme");
+            }
+        });
+        
+        // Evento que cambia el tema al hacer clic en el botón del "moon"
+        document.getElementById('moon').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        
+            // Guardar en localStorage el estado actual del tema
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem("theme", "dark");
+                document.getElementById('audioBuho').play();
+            } else {
+                localStorage.setItem("theme", "light");
+                document.getElementById('audioGallo').play();
+            }
+        });
+        </script>
+
+</body>
+
+</html>

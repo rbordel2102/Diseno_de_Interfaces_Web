@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Definición de la codificación de caracteres para soportar caracteres especiales y acentos -->
+    <meta charset="UTF-8">
+    <!-- Configuración para que el diseño sea adecuado a diferentes tamaños de pantalla (móviles, tabletas, etc.) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Filamentopía - Home</title>
+    <!-- Título de la página que aparece en la pestaña del navegador -->
+
+    <!-- Vinculación al archivo de estilos CSS para la página -->
+    <link rel="stylesheet" href="css/styleIndex.css">
+
+    <!-- Fuentes de Google Fonts para el texto de la página -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon que aparece en la pestaña del navegador -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body id="bdy" onload="playWelcomeAudio()">
+    <!-- Header (Encabezado de la página) -->
+    <header>
+        <div class="container header-container">
+            <!-- Título principal del sitio -->
+            <h1 class="title-animation">Filamentopía</h1>
+
+            <!-- Menú de navegación con enlaces a las diferentes secciones del sitio -->
+            <nav aria-label="Menú principal">
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Menu de usuario -->
+            <div class="user-menu">
+                <span id="user-greeting" style="display:none;"><span id="username"></span></span>
+                <button id="login-btn" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">Iniciar sesión</button>
+                <button id="register-btn" class="btn btn-secondary" data-bs-toggle="modal"
+                    data-bs-target="#registerModal">Registrarse</button>
+                <button id="logout-btn" class="btn btn-danger" style="display:none;">Cerrar sesión</button>
+            </div>
+
+            <!-- Añadir audio para el sonido del gallo -->
+            <audio id="audioGallo" src="multimedia/audio/gallo.wav"></audio>
+            <audio id="audioBuho" src="multimedia/audio/owl.ogg"></audio>
+            <!-- Botón para cambiar el tema de la página entre claro y oscuro -->
+            <div id="theme-switcher">
+                <button id="moon" aria-label="Cambiar entre tema claro y oscuro">
+                    <div id="moonspot1" class="spots"></div>
+                    <div id="moonspot2" class="spots"></div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal de inicio de sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="login-form">
+                        <div class="mb-3">
+                            <label for="login-username" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="login-username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="login-password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Ingresar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de registro -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Registrarse</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="register-form">
+                        <div class="mb-3">
+                            <label for="register-username" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="register-username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="register-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección Hero, una sección destacada con una frase promocional -->
+        <section class="hero">
+            <video id="hero-video" autoplay loop muted playsinline poster="multimedia/image/hero1.jpg">
+                <source src="multimedia/video/hero1.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+            <button id="video-control" class="video-controls">
+                <i id="control-icon" class="fas fa-play"></i>
+            </button>
+            <div class="hero-content">
+                <p class='subtitulo'>Descubre los mejores filamentos para tus impresoras 3D
+                    con Filamentopía</p>
+            </div>
+        </section>
+
+        <!-- Sección de "Quiénes somos", explica la misión de la empresa -->
+        <section id="about-us">
+            <h2>¿Quiénes somos?</h2>
+            <div class="about-content">
+                <p class="p1">En Filamentopía, nuestra pasión por la impresión 3D nos
+                    motiva a ofrecer productos y servicios que marcan la
+                    diferencia. Entendemos que cada proyecto tiene sus
+                    propias necesidades, ya sea un diseño creativo, un
+                    prototipo funcional o una pieza técnica. Por eso,
+                    nuestra gama de filamentos está cuidadosamente
+                    seleccionada para garantizar que siempre encuentres el
+                    material adecuado para tus objetivos.</p>
+
+                <!-- Imagen representativa de la empresa -->
+                <img src="multimedia/image/empresa_humana.webp" alt="Nuestro equipo"
+                    style="max-width: 22%; border-radius: 8px; float: right; margin: 40px 20px 20px 20px;">
+            </div>
+        </section>
+
+        <!-- Sección sobre las razones para elegir Filamentopía como proveedor -->
+        <section id="about-us2">
+            <h2 class="h21" style="text-align: center;">¿Por qué elegir Filamentopía?</h2>
+            <p class="p2" style="text-align: center;">Nuestro equipo de expertos está listo para asesorarte, desde
+                la elección del filamento ideal hasta consejos prácticos
+                para tus proyectos.
+                Variedad para todos, contamos con una amplia selección de
+                materiales como PLA, ABS, PETG, nylon, flexibles y
+                compuestos de madera o metal.
+                Ofrecemos guías detalladas, tutoriales y un servicio técnico
+                dedicado para resolver cualquier duda o problema que
+                encuentres en tus impresiones.</p>
+
+            <br><br>
+
+            <!-- Imágenes de impresoras 3D relacionadas con la temática -->
+            <div class="about-content">
+                <div class="img-container left">
+                    <img src="multimedia/image/img1.jpg" alt="Impresora 3D">
+                </div>
+                <div class="img-container center">
+                    <img src="multimedia/image/img2.jpg" alt="Impresora 3D">
+                </div>
+                <div class="img-container right">
+                    <img src="multimedia/image/img3.jpg" alt="Impresora 3D">
+                </div>
+            </div>
+
+            <div class="video-container">
+                <h3 class="video-title">Demostración de Impresora 3D</h3>
+                <p class="video-description">Mira cómo nuestras impresoras 3D crean objetos increíbles con precisión y
+                    detalle.</p>
+                <video controls>
+                    <source src="multimedia/video/impresora.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+            <br>
+        </section>
+    </main>
+
+    <!-- Footer (Pie de página) -->
+    <footer>
+        <div class="container footer-container">
+            <p class="p5">&copy; 2024 Filamentopía. Todos los derechos reservados.</p>
+            <nav aria-label="Menú del pie de página">
+                <ul>
+                    <li class="p5"><a href="#">Política de privacidad</a></li>
+                    <li class="p5"><a href="#">Términos de servicio</a></li>
+                </ul>
+            </nav>
+            <div class="accessibility-certificate">
+                <p class="p5"><img src="multimedia/image/accees.png" alt="Icono de accesibilidad" width="20" height="20"> Sitio certificado en accesibilidad WCAG 2.1 Nivel AA</p>
+            <p class="p5">Este sitio web está licenciado bajo <a
+                    href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+            <p class="p5">Imágenes y recursos cortesía de <a href="https://www.pexels.com/" target="_blank">Pexels</a> y
+                <a href="https://www.pixabay.com/" target="_blank">Pixabay</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script para cambiar entre el tema claro y oscuro -->
+    <script>
+        // Verificar si hay un modo guardado en localStorage
+        document.addEventListener("DOMContentLoaded", function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-theme");
+            }
+        });
+
+        // Evento que cambia el tema al hacer clic en el botón del "moon"
+        document.getElementById('moon').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+
+            // Guardar en localStorage el estado actual del tema
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem("theme", "dark");
+                document.getElementById('audioBuho').play();
+            } else {
+                localStorage.setItem("theme", "light");
+                document.getElementById('audioGallo').play();
+            }
+        });
+
+
+        const video = document.getElementById("hero-video");
+        const videoControl = document.getElementById("video-control");
+        const controlIcon = document.getElementById("control-icon");
+
+        videoControl.addEventListener("click", () => {
+            if (video.paused) {
+                video.play();
+                controlIcon.classList.remove("fa-play");
+                controlIcon.classList.add("fa-pause");
+            } else {
+                video.pause();
+                controlIcon.classList.remove("fa-pause");
+                controlIcon.classList.add("fa-play");
+            }
+        });
+
+
+        $(document).ready(function () {
+            $("#login-form").submit(function (e) {
+                e.preventDefault();
+                let username = $("#login-username").val();
+                let password = $("#login-password").val();
+                if (username && password) {
+                    localStorage.setItem("user", username);
+                    updateUI();
+                    $("#loginModal").modal("hide");
+                } else {
+                    alert("Por favor, introduce un usuario y contraseña válidos.");
+                }
+            });
+
+            $("#register-form").submit(function (e) {
+                e.preventDefault();
+                let username = $("#register-username").val();
+                let password = $("#register-password").val();
+                if (username && password) {
+                    alert("Usuario registrado correctamente. Ahora puedes iniciar sesión.");
+                    $("#registerModal").modal("hide");
+                } else {
+                    alert("Por favor, completa todos los campos.");
+                }
+            });
+
+            $("#logout-btn").click(function () {
+                localStorage.removeItem("user");
+                updateUI();
+            });
+
+            function updateUI() {
+                let user = localStorage.getItem("user");
+                if (user) {
+                    $("#user-greeting").show();
+                    $("#username").text(user);
+                    $("#login-btn").hide();
+                    $("#register-btn").hide();
+                    $("#logout-btn").show();
+                } else {
+                    $("#user-greeting").hide();
+                    $("#login-btn").show();
+                    $("#register-btn").show();
+                    $("#logout-btn").hide();
+                }
+            }
+
+            updateUI();
+        });
+    </script>
+</body>
+
+</html>

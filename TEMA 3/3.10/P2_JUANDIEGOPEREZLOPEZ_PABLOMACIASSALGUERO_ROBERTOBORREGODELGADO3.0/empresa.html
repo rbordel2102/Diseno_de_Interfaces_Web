@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Meta etiquetas para el soporte de caracteres y vista en dispositivos móviles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Título de la página que aparece en la pestaña del navegador -->
+    <title>Filamentopía - Tienda Mayoristas</title>
+    
+    <!-- Vinculación al archivo CSS para los estilos de la página -->
+    <link rel="stylesheet" href="css/styleEmpresa.css">
+    
+    <!-- Fuentes de Google Fonts para el texto de la página -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sección de encabezado -->
+    <header>
+        <div class="header-container">
+            <!-- Título de la tienda -->
+            <h1 class="title-animation">Filamentopía</h1>
+            
+            <!-- Menú de navegación -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="empresa.html">Empresa</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Añadir audio para el sonido del gallo -->
+            <audio id="audioGallo" src="multimedia/audio/gallo.wav"></audio>
+            <audio id="audioBuho" src="multimedia/audio/owl.ogg"></audio>
+            <!-- Botón para cambiar entre tema claro y oscuro -->
+            <button id="moon" aria-label="Cambiar tema de la página">
+                <div id="moonspot1" class="spots"></div>
+                <div id="moonspot2" class="spots"></div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección de productos -->
+        <section class="productos-container">
+            
+            <!-- Producto 1 -->
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71rlElfkeUL._AC_UF894,1000_QL80_.jpg" alt="Producto 1">
+                <h3>Filamento InovaPlast 1</h3>
+                <p class="price">$15.00 (mayorista)</p>
+                <p>Filamento de alta velocidad - Verde</p>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71ZcMSZyRLL._AC_UF1000,1000_QL80_.jpg" alt="Producto 2">
+                <h3>Filamento InovaPlast 2</h3>
+                <p class="price">$27.50</p>
+                <p>Filamento de alta velocidad - Negro</p>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71PjDnB58bL._AC_UF894,1000_QL80_.jpg" alt="Producto 3">
+                <h3>Filamento InovaPlast 3</h3>
+                <p class="price">$12.00</p>
+                <p>Filamento de alta velocidad - Rojo</p>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71uVglvsUCL._AC_UF1000,1000_QL80_.jpg" alt="Producto 4">
+                <h3>Filamento InovaPlast 4</h3>
+                <p class="price">$45.00</p>
+                <p>Filamento de alta velocidad - Amarillo</p>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71C8meHflML._AC_UF1000,1000_QL80_.jpg" alt="Producto 5">
+                <h3>Filamento InovaPlast 5</h3>
+                <p class="price">$18.00</p>
+                <p>Filamento de alta velocidad - Lila</p>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/712mO91Qq-L.jpg" alt="Producto 6">
+                <h3>Filamento InovaPlast 6</h3>
+                <p class="price">$25.00</p>
+                <p>Filamento de alta velocidad - Rosa fuerte</p>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/711uLgkStdL.jpg" alt="Producto 7">
+                <h3>Filamento InovaPlast 7</h3>
+                <p class="price">$22.50</p>
+                <p>Filamento de alta velocidad - Naranja</p>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71dBjOtr1hL.jpg" alt="Producto 8">
+                <h3>Filamento InovaPlast 8</h3>
+                <p class="price">$30.00</p>
+                <p>Filamento de alta velocidad - Blanco</p>
+            </div>
+
+            <!-- Producto 9 -->
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71NKVpG1VCL.jpg" alt="Producto 9">
+                <h3>Filamento InovaPlast 9</h3>
+                <p class="price">$12.50</p>
+                <p>Filamento de alta velocidad - Azul</p>
+            </div>
+
+            <!-- Producto 10 -->
+            <div class="producto">
+                <img src="https://m.media-amazon.com/images/I/71JL-Ll9E1L.jpg" alt="Producto 10">
+                <h3>Filamento InovaPlast 10</h3>
+                <p class="price">$12.50</p>
+                <p>Filamento de alta velocidad - Rosa</p>
+            </div>
+
+        </section>
+
+        <!-- Sección de pedido -->
+        <section id="pedido">
+            <h2>Realiza tu Pedido</h2>
+            <!-- Formulario para realizar el pedido -->
+            <form action="datos-bancarios.html" method="get">
+            <label for="empresa">Nombre de la Empresa:</label>
+            <input type="text" id="empresa" name="empresa" required><br>
+
+            <label for="contacto">Persona de Contacto:</label>
+            <input type="text" id="contacto" name="contacto" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required><br>
+
+            <label for="producto">Producto:</label>
+            <select id="producto" name="producto">
+                <option value="Filamento 1">Filamento 1</option>
+                <option value="Filamento 2">Filamento 2</option>
+                <option value="Filamento 3">Filamento 3</option>
+                <option value="Filamento 4">Filamento 4</option>
+                <option value="Filamento 5">Filamento 5</option>
+                <option value="Filamento 6">Filamento 6</option>
+                <option value="Filamento 7">Filamento 7</option>
+                <option value="Filamento 8">Filamento 8</option>
+                <option value="Filamento 9">Filamento 9</option>
+                <option value="Filamento 10">Filamento 10</option>
+            </select><br>
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required><br>
+
+            <button type="submit">Enviar Pedido</button>
+        </form>
+        </section>
+    </main>
+
+    <!-- Footer (Pie de página) -->
+    <footer>
+        <div class="container footer-container">
+            <p class="p5">&copy; 2024 Filamentopía. Todos los derechos reservados.</p>
+            <nav aria-label="Menú del pie de página">
+                <ul>
+                    <li class="p5"><a href="#">Política de privacidad</a></li>
+                    <li class="p5"><a href="#">Términos de servicio</a></li>
+                </ul>
+            </nav>
+            <div class="accessibility-certificate">
+                <p class="p5"><img src="multimedia/image/accees.png" alt="Icono de accesibilidad" width="20" height="20"> Sitio certificado en accesibilidad WCAG 2.1 Nivel AA</p>
+            <p class="p5">Este sitio web está licenciado bajo <a
+                    href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+            <p class="p5">Imágenes y recursos cortesía de <a href="https://www.pexels.com/" target="_blank">Pexels</a> y
+                <a href="https://www.pixabay.com/" target="_blank">Pixabay</a>
+            </p>
+        </div>
+    </footer>
+
+    <audio id="audio" src="multimedia/audio/orb.mp3"></audio>
+
+    <!-- Script para cambiar el tema -->
+    <script>
+        // Verificar si hay un modo guardado en localStorage
+        document.addEventListener("DOMContentLoaded", function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-theme");
+            }
+        });
+        
+        // Evento que cambia el tema al hacer clic en el botón del "moon"
+        document.getElementById('moon').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        
+            // Guardar en localStorage el estado actual del tema
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem("theme", "dark");
+                document.getElementById('audioBuho').play();
+            } else {
+                localStorage.setItem("theme", "light");
+                document.getElementById('audioGallo').play();
+            }
+        });
+        </script>
+</body>
+
+</html>
